@@ -7,6 +7,7 @@ This is a temporary script file.
 
 from sense_hat import SenseHat
 import json
+import os
 
 sense = SenseHat()
 
@@ -32,7 +33,8 @@ json_data ={
     'accel_only': accel_only,    
     }
 
-with open("sensor_data.json", "w", encoding='utf-8') as fp:
+path = os.path.join("/home/safeharbourtech/ApplicationCode/DataSender", "sensor_data.json" )
+with open(path, "w", encoding='utf-8') as fp:
     json.dump(json_data, fp, sort_keys=True, indent=4)
 
 #sense.show_message("SAFE HARBOUR TECH!")
